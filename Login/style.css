@@ -1,0 +1,62 @@
+body{ 
+    margin:0;
+    padding:0;
+    background: url(img_6922.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+.login-box{
+    width: 320px;
+    height: 420px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    top:50%;
+    left:50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+
+}
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+
+}
+.login-box p{
+margin: 2;
+padding: 0;
+font-weight: bold;
+}
+.login-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.login-box input[type="text"], input[type="password"]
+{
+    border:none;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height:40px;
+    color: #fff;
+    font-size:16px;
+}
+.login-box input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #d81e1e;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.login-box input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #39dc;
+}
