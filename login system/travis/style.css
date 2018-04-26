@@ -104,8 +104,13 @@ input, select {
 /*My code*/
 
 .main-wrapper {
-    margin: 0auto;
+    margin: 0 auto;
     width: 1000;
+}
+
+.nav-wrapper{
+    margin: 0 auto;
+    width: 100%;
 }
 
 a {
