@@ -68,6 +68,7 @@ $error_message = "";
                 
                 <?php if(isset($_SESSION['u_id'])){
                     echo '<form method="post" enctype="multipart/form-data" action="'.$_SERVER['PHP_SELF'].'">';
+                    echo '<input type="button" value="Account" onclick="window.location.href=\'account.php\'">';
                     echo '<input type="button" value="Logout" onclick="window.location.href=\'logout.php\'">';
                     echo '</form>';
                 }else{

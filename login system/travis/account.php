@@ -123,6 +123,7 @@ tr{
                 echo "<td>".$courses."</td>";
                 echo "<td>".$score1. "," .$score2. "," .$score3."</td>";
                 echo "<td>". ($gpascore1 + $gpascore2 + $gpascore3) / 3 ."</td>";
+                echo '<td><button onclick="window.location.href=\'edit.php?edituser='.$email.'\'">Edit</button></td>';
                 echo "</tr>";
 
        

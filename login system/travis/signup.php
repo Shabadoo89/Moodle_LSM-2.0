@@ -5,12 +5,14 @@
   	$name = $_POST['name'];
    $username = $_POST['email']; // required
     $password = $_POST['pass']; // required
+    $studentid = $_POST['sid'];
     $repassword = $_POST['repass'];
 
       $sql = "SELECT username, email, password, student_admin, student_name FROM lms WHERE email = '" . $_POST['email'] . "'";
 $result = $conn->query($sql);
   $pass = trim($_POST['pass']);
   $email = trim($_POST['email']);
+  $sid = trim($_POST['sid']);
   $checkemail = "SELECT email FROM lms WHERE email = '$email'";
   $result = $conn->query($checkemail);
 
@@ -43,27 +45,32 @@ $error_message = "";
 
     if($password != $repassword){
     	$errors=1;
-    	$error_message .= 'Passwords do not match';
+    	$error_message .= 'Passwords do not match\n';
     }
 
     if($name == ''){
     	$errors=1;
-    	$error_message .= 'name cannot be blank';
+    	$error_message .= 'name cannot be blank\n';
     }
 
      if($username == ''){
     	$errors=1;
-    	$error_message .= 'email cannot be blank';
+    	$error_message .= 'email cannot be blank\n';
     }
 
      if($password == ''){
     	$errors=1;
-    	$error_message .= 'password cannot be blank';
+    	$error_message .= 'password cannot be blank\n';
+    }
+
+    if($studentid == ''){
+      $errors=1;
+      $error_message .= 'student id cannot be blank\n';
     }
  
 
   if($errors==0){
-         $query = "INSERT INTO lms (username, email, password, student_name) VALUES('$name', '$username', '$password', '$name')";
+         $query = "INSERT INTO lms (username, email, password, student_name, student_id) VALUES('$name', '$username', '$password', '$name', '$studentid')";
       mysqli_query($conn, $query);
         header('location: index.php');
   }else{
@@ -83,6 +90,7 @@ $error_message = "";
          <form method="post" style="margin: 0 auto; width: 1000px;" enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF'];?>">
                             <input type="email" name="email" placeholder="Email *" required>
                             <input type="text" name="name" placeholder="Name *" required>
+                             <input type="text" name="sid" placeholder="Student ID *" required>
                             <input type="password" name="pass" placeholder="Password *" required>
                             <input type="password" name="repass" placeholder="Repeat Password *" required>
                             <input type="submit" name="signup" value="Register">
