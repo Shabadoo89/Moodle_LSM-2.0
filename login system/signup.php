@@ -1,3 +1,7 @@
+/* 
+The following code inserts the information typed into the fields of the signup page into the database of users and stores it there.
+*/
+
 <?php
  include_once 'header.php';
   if ( isset($_POST['signup']) ) {

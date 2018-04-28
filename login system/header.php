@@ -1,3 +1,7 @@
+/* 
+This file is the header of to format and to verify that the user is inputting correct information
+*/
+
 <?php
 include('connection.php');
 session_start();

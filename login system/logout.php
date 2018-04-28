@@ -1,3 +1,7 @@
+/* 
+The following code ends a session that was started at the moment of login. It destroys all cookies and logs user out.
+*/
+
 <?php
 
 session_start();

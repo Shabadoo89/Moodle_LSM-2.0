@@ -1,3 +1,7 @@
+/*
+The following code connects a the database to a server named travis. This server is a local server that was created using a program named xampp.
+*/
+
 <?php 
 $servername = "localhost";
 $username = "travis";

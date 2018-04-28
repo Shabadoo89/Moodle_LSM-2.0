@@ -1,3 +1,8 @@
+/* 
+The following code allows the admin to edit the student information and save it to the database. It includes the header php file that allows us to have some sort
+of formating and organization within the display of the website.
+*/
+
 <?php
 include('header.php');
 $username = $_SESSION['u_id'];

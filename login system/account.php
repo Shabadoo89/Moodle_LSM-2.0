@@ -1,3 +1,10 @@
+/* 
+Moodle_LSM-2.0
+Jesus Daniel Reveles
+Objective: The following code allows the website to create an account as well as verifiy that the account is verified. In short it authenticates and validates
+as well as creates accounts to login for students and admins.
+*/
+
 <?php
 include('header.php');
 $username = $_SESSION['u_id'];
@@ -29,53 +36,51 @@ tr{
     <div class = "main-wrapper">
         <h2 style="padding-bottom: 20px;">Account</h2>
         <h4 style="text-align: center; padding-bottom: 20px;">Student Info</h4>
-              	  <table style="margin: 0 auto;">
-  <tr>
+            <table style="margin: 0 auto;">
+	<tr>
     <th>Name</th>
     <th>ID</th>
     <th>Courses</th>
     <th>Scores</th>
     <th>GPA</th>
-  </tr>
+  	</tr>
         <?php
     // output data of each row
              while ($row2 = mysqli_fetch_array($result2)){
              	$admin = $row2['student_admin'];
-         if($admin == '1'){
-     while ($row = mysqli_fetch_array($result)){
-             $name = $row['student_name'];
-             $email = $row['email'];
-          $id = $row['student_id'];
-          $courses = $row['student_courses'];
-          $score1 = $row['student_score1'];
-          $score2 = $row['student_score2'];
-          $score3 = $row['student_score3'];
+         			if($admin == '1'){
+     					while ($row = mysqli_fetch_array($result)){
+							$name = $row['student_name'];
+							$email = $row['email'];
+							$id = $row['student_id'];
+							$courses = $row['student_courses'];
+							$score1 = $row['student_score1'];
+							$score2 = $row['student_score2'];
+							$score3 = $row['student_score3'];
       	 
 
-          	$gpascore1 = 0;
-      		$gpascore2 = 0;
-      		$gpascore3 = 0;
-        	if($score1 >= '90'){
-        		$gpascore1 = 4.0;
-        	}else{
-        		if($score1 >= '80' && $score1 <= '89'){
-        			$gpascore1 = 3.0;
-        		}else{
-        			if($score1 >= '70' && $score1 <= '79'){
-        				$gpascore1 = 2.0;
-        			}else{
-        			 if($score1 >= '60' && $score1 <= '69'){
-        			 	$gpascore1 = 1.0;
-        			 }else{
-        		 	if($score1 >= '0' && $score1 <= '59'){
-        		 		$gpascore1 = 0.0;
-        		 	}
-        		 }
-        		}
-        	}
-        	}
-        
-
+							$gpascore1 = 0;
+							$gpascore2 = 0;
+							$gpascore3 = 0;
+							if($score1 >= '90'){
+								$gpascore1 = 4.0;
+							}else{
+								if($score1 >= '80' && $score1 <= '89'){
+									$gpascore1 = 3.0;
+								}else{
+									if($score1 >= '70' && $score1 <= '79'){
+										$gpascore1 = 2.0;
+									}else{
+									if($score1 >= '60' && $score1 <= '69'){
+										$gpascore1 = 1.0;
+									}else{
+									if($score1 >= '0' && $score1 <= '59'){
+										$gpascore1 = 0.0;
+									}
+								}
+								}
+							}
+						}
         if($score2 >= '90'){
         		$gpascore2 = 4.0;
         	}else{
@@ -94,9 +99,7 @@ tr{
         		}
         		}
         	}
-        	}
-        
-
+        }
         if($score3 >= '90'){
         		$gpascore3 = 4.0;
         	}else{
@@ -114,9 +117,8 @@ tr{
         			}
         		 }
         		}
-        		}
         	}
-        	
+        }
            echo "<tr>";
                 echo "<td>".$name."</td>";
                 echo "<td>".$id."</td>";
@@ -127,23 +129,21 @@ tr{
                 echo "</tr>";
 
        
-            }}
-
-
-
+			}
+		}
             if($admin == '0'){
             	while ($row3 = mysqli_fetch_array($result3)){
-             $name3 = $row3['student_name'];
-             $email3 = $row3['email'];
-          $id3 = $row3['student_id'];
-          $courses3 = $row3['student_courses'];
-          $score13 = $row3['student_score1'];
-          $score23 = $row3['student_score2'];
-          $score33 = $row3['student_score3'];
+				$name3 = $row3['student_name'];
+				$email3 = $row3['email'];
+				$id3 = $row3['student_id'];
+				$courses3 = $row3['student_courses'];
+				$score13 = $row3['student_score1'];
+				$score23 = $row3['student_score2'];
+				$score33 = $row3['student_score3'];
 
-          	$gpascore13 = 0;
-      		$gpascore23 = 0;
-      		$gpascore33 = 0;
+				$gpascore13 = 0;
+				$gpascore23 = 0;
+				$gpascore33 = 0;
         	if($score13 >= '90'){
         		$gpascore13 = 4.0;
         	}else{
@@ -162,9 +162,7 @@ tr{
         		 }
         		}
         	}
-        	}
-        
-
+        }
         if($score23 >= '90'){
         		$gpascore23 = 4.0;
         	}else{
@@ -181,11 +179,9 @@ tr{
         			 	$gpascore23 = 0.0;
         			 }
         		}
-        		}
         	}
-        	}
-        
-
+        }
+    }
         if($score33 >= '90'){
         		$gpascore33 = 4.0;
         	}else{
@@ -201,28 +197,21 @@ tr{
         		 	if($score33 >= '0' && $score33 <= '59'){
         				$gpascore33 = 0.0;
         			}
-        		 }
-        		}
         		}
         	}
-        	
-           echo "<tr>";
+        }
+    }	
+           		echo "<tr>";
                 echo "<td>".$name3."</td>";
                 echo "<td>".$id3."</td>";
                 echo "<td>".$courses3."</td>";
                 echo "<td>".$score13. "," .$score23. "," .$score33."</td>";
                 echo "<td>". ($gpascore13 + $gpascore23 + $gpascore33) / 3 ."</td>";
                 echo "</tr>";
-
-       
-            }}}
-            
-      
-      
-
-  
-  
-        ?>
+		}
+	}
+}
+    ?>
     </table>
     </div>
 </section>

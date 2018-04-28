@@ -1,3 +1,7 @@
+/* 
+The following code is a simple php session with the appropriate includes to create the homepage of our website.
+*/
+
 <?php
  include_once 'header.php';
 ?>
